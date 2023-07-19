@@ -1,0 +1,32 @@
+    * {
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .main-body {
+        width: 20%;
+    }
+
+    .main-body-container {
+        display: flex;
+        background-color: #3b444b;
+    }
+
+    .product-container-body {
+        width: 80%;
+    }
+
+.hidden_{
+    opacity: 1;
+    transition: all .2s;
+    filter: blur(0px);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+}

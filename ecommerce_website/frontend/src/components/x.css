@@ -1,0 +1,29 @@
+.cross {
+    background: #353839;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: 95%;
+    top: 5%;
+    cursor: pointer;    
+}
+.cross:after {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+    cursor: pointer;    
+
+}
+
+.cross:before {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+    cursor: pointer;    
+}

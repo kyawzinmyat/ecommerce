@@ -1,0 +1,11 @@
+:root{
+    --primary-color: #3b444b;
+    --large-fs: 3em;
+    --medium-fs: 2em;
+    --small-fs: 1em
+}
+
+h1, h2, h3, h4, h5, p{
+    max-width: 60ch;
+    line-height: 1.6;
+}

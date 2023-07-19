@@ -1,0 +1,44 @@
+.join-for-free-container{
+    width: 100%;
+    margin: 3em auto;
+    padding: 7em;
+}
+
+
+.jff-header{
+    font-size: 7vw;
+    width: min(90%, 500px);
+    text-align: center;
+    margin: 1em auto;
+}
+
+
+@media (min-width:600px) {
+    .jff-header{
+        text-align: center;
+        margin: 1em auto;
+        max-width: 70rem;
+        font-size: 3em
+    }
+}
+
+.jff-subheader{
+    margin: 1em auto 1em auto; 
+    text-align: center;
+    width: min(90%, 700px);
+    font-size:2vw;
+}
+
+.jff-button{
+    display: block;
+    font-size:2vw;
+    margin: 0em auto;
+    padding: 1em;
+    background-color: #fff;
+    color: #3b444b;
+}
+
+.jff-button:hover{
+    color: #fff;
+    background-color: #3b444b;
+}

@@ -1,0 +1,230 @@
+@import "../css/style.css";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+    --primary_clr: rgb(12, 205, 128);
+    --large_font: 3em;
+    --font-medium: 2em;
+    --font-small: 1em;
+    --font-x-small: 0.5em;
+    --white: #ffffff;
+}
+
+.color-primary{
+    color: var(--primary_clr);
+}
+
+.body {
+    background-image: linear-gradient(to left, #ECE9E6, #FFFFFF);
+}
+
+#errorMessage {
+    visibility: hidden
+}
+
+.container-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: white;
+    border-radius: 20px;
+    height: 550px;
+}
+
+
+
+.username {
+    width: 80%;
+    margin: 2em auto;
+    height: 50px;
+    border: 4.5px solid rgb(209, 221, 217);
+    border-radius: 20px;
+}
+
+
+
+.password {
+    width: 80%;
+    margin: 2em auto;
+    height: 50px;
+    border: 4.5px solid rgb(209, 221, 217);
+    border-radius: 20px;
+}
+
+.log-in-title {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    margin-top: 2em;
+    color: black;
+}
+
+
+
+#log-in-but {
+    display: block;
+    width: 50%;
+    height: 50px;
+    margin: 2em auto;
+    background-color: black;
+    opacity: 0.8;
+}
+
+
+@media screen and (min-width: 900px) {
+
+    body {
+        background-color: white;
+    }
+
+    .container-body {
+        display: grid;
+        grid-template-areas:
+            "logo log-in log-in"
+            "logo log-in log-in"
+            "logo log-in log-in";
+
+        width: 40%;
+        border-radius: 0px;
+    }
+
+    .logo {
+        grid-area: logo;
+        margin-left: -1em;
+        background: rgb(12, 205, 128);
+    }
+
+    #log-in-title {
+        font-family: sans-serif;
+        position: relative;
+        top: 10%;
+        font-weight: 800;
+        font-size: var(--font-medium);
+        color: black;
+    }
+
+
+    .login-form {
+        grid-area: log-in;
+        margin: 0 auto;
+    }
+
+    .username {
+        width: 100%;
+        font-size: var(--font-small);
+        margin: 1em auto;
+        height: 60px;
+    }
+
+    .password {
+        font-size: var(--font-small);
+        width: 100%;
+        height: 60px;
+    }
+
+}
+
+
+.sign-up-footer {
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-small);
+    width: 100%;
+    display: block;
+    margin: 1em auto;
+    padding: 0.3em;
+    border-radius: 10px;
+
+}
+
+.login-google {
+    width: 100%;
+    display: block;
+    margin: 1em auto;
+    font-size: var(--font-small);
+    padding: 0.3em;
+    text-decoration: none;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+
+.sub-login{
+    display: flex;
+    width:70%;
+    margin: 0 auto;
+}
+
+.sub-login a {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .sign-up-footer {
+        font-size: 0.7em;
+
+    }
+
+    .body{
+        background-color: var(--primary_clr);
+    }
+
+    .login-google {
+        font-size: 0.7em;
+    }
+
+    #log-in-but {
+        display: block;
+        width: 50%;
+        font-size: var(--font-small);
+        height: 35px;
+        margin: 1em auto;
+        background-color: black;
+        opacity: 0.8;
+    }
+
+    .username {
+        width: 80%;
+        font-size: var(--font-small);
+        margin: 0.5em auto;
+        height: 40px;
+    }
+
+    .password {
+        font-size: var(--font-small);
+        width: 80%;
+        height: 40px;
+    }
+
+    svg {
+        width: 20px
+    }
+
+    .sub-login{
+       width:70%;
+    }
+    
+    .sub-login a {
+        width: 20%;
+    }
+    
+}
+
+.sign-up-footer:hover,
+.login-google:hover,
+#log-in-but:hover {
+    background-color: var(--primary_clr);
+    color: white;
+    border: 1px solid white
+}
+

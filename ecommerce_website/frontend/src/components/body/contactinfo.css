@@ -1,0 +1,37 @@
+.contact-info-container{
+    margin: 10em auto;
+    width: min(100%, 1500px);
+    padding-top: 5em;
+    background-color: #3b444b;
+}
+
+.contact-info-container svg{
+    margin: 0 1em;
+    width: 1vw;
+}
+
+.ci-subcontainer h1{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-info-container p{
+    font-size: 1.7vw;
+}
+
+.ci-icon-container{
+    width: 100%;
+    display: flex;
+    margin:2em auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ci-icon{
+    margin: 1em auto;
+}
+
+.ci-subcontainer{
+    padding: 5em;
+}
