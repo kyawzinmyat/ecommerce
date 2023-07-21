@@ -13,6 +13,7 @@
 .sign-up-body {
     display: flex;
     height: 100vh;
+    background-color: var(--primary-color);
     justify-content: center;
     align-items: center;
 }
@@ -22,7 +23,7 @@
     width: 100%;
     padding: 20px 35px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 
@@ -48,7 +49,7 @@
 }
 
 form .user-details .input-box {
-    margin: 20px 0 12px 0;
+    margin: 0px 0 12px 0;
     width: calc(100% / 2 - 20px);
 }
 
@@ -69,13 +70,14 @@ form .user-details .input-box details {
     outline: none;
     border-radius: 5px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-color);
+    margin-top: 5px;
     padding-left: 15px;
 }
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-    border-color: #9b59b6;
+    border-color: var(--primary-color);
 }
 
 form .gender-details .gender-title {

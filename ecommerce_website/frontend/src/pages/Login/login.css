@@ -6,6 +6,7 @@
 
 .body-login{
     height: 100vh;
+    background-color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +17,7 @@
     max-width: 500px;
     border-radius: 5px;
     padding: 20px 35px;
+    background-color: var(--secondary-color);
     border: 1px solid #ccc
 }
 
@@ -38,9 +40,13 @@
     margin: 10px 0;
 }
 
+#errorMessage{
+    visibility: hidden;
+}
+
 .input-box-login input:focus,
 .input-box-login input:valid {
-    border-color: #9b59b6;
+    border-color: var(--primary-color);
 }
 
 .title-login{

@@ -4,7 +4,6 @@ import HomePage from "./pages/HomePage";
 import React from "react";
 import {
   HashRouter as Router,
-  Switch,
   Route,
   Link,
   Routes,
