@@ -84,7 +84,7 @@
     gap: var(--gap, 3rem);
 }
 
-@media (max-width:35em) {
+@media (max-width:45em) {
     .mobile-nav-toggle {
         width: 1.5em;
         display: block;
@@ -238,3 +238,14 @@
         max-height: 1055px;
     }
 } */
+
+
+@media (min-width:10000px){
+    .scroll-up{
+        transform: translate3d(0, 0%, 0);
+    }
+    
+    .scroll-down{
+        transform: translate3d(0, -100%, 0);
+    }
+}

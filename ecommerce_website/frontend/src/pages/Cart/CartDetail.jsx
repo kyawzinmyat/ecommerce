@@ -6,6 +6,7 @@ import CartItemList from "./CartItemList";
 import Basket from "./Basket";
 import { BasketProvider } from "../../context/BasketContext";
 import CartSummary from "./CartSummary";
+import Navbar from "../../components/Navbar/Navbar";
 
 const API_HOST = "http://127.0.0.1:8000/api/";
 
@@ -14,6 +15,7 @@ export default function CartDetail() {
   document.title='Your Cart'
   return (
     <>
+    <Navbar></Navbar>
       <div
         className="text-center cart-detail-title my-5"
         style={{ fontFamily: "cursive" }}
@@ -22,15 +24,15 @@ export default function CartDetail() {
           Your Cart
         </div>
       </div>
-      <div className="w-100 cart-detail-container">
+      <div className="w-full cart-detail-container">
         <div className="row container-fluid">
           <div className="col-lg-7 col-md-12 mx-auto">
             <div className="container-fluid cart-detail-table">
-              <table className="table">
-                <thead style={{ width: "50%" }}>
-                  <tr className="mx-3">
+              <table className="table-auto w-full  border border-slate-500 border-seperate  border-spacing-1 mx-auto">
+                <thead>
+                  <tr className=" text-xs md:text-md lg:text-xl">
                     <th className="text-left px-3 cart-font cart-font">Item</th>
-                    <th className="text-center cart-font">Price</th>
+                    <th className="text-center p-1 cart-font">Price</th>
                     <th className="text-center cart-font">Quantity</th>
                     <th className="text-center cart-font">Total</th>
                   </tr>

@@ -42,20 +42,21 @@ export default function Body() {
         </div>
         <div className="hidden_">
           <ProductContainer />
+          <ProductContainer />
         </div>
       </div>
       <div className="hidden_">
         <JoinForFree />
       </div>
-      <div className="hidden_">
-        <PopularCategoriesContainer />
-      </div>
-      <div className="hidden_">
+      <div className="hidden_ my-5">
         <GrowBusiness />
       </div>
       <div className="hidden_">
-        <ContactInfo />
+        <PopularCategoriesContainer />
       </div>
+      {/* <div className="hidden_">
+        <ContactInfo />
+      </div> */}
       <Footer />
     </div>
   );

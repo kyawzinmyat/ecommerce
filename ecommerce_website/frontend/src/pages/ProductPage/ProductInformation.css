@@ -27,25 +27,6 @@
     margin: 20px auto;
 }
 
-@media (min-width: 999px) {
-    .product-information-container {
-        width: 80%;
-        height: 90vh;
-    }
-
-    .product-description{
-        margin: 20px 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        overflow: scroll;
-        -webkit-box-orient: vertical;
-    }
-
-    .product-description::-webkit-scrollbar{
-        display: none;
-    }
-}
-
 .product-description{
     line-height: 1.6;
 }

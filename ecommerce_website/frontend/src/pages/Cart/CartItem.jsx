@@ -25,12 +25,12 @@ export default function CartItem({ item }) {
 
   return (
     <>
-      <tr>
-        <td className="text-center">
+      <tr className="text-xs md:text-lg">
+        <td className="text-center ">
           <div className="item-table-info">
             <div className="item-info">
               <img
-                className="table-product-image"
+                className="lg:h-36 lg:w-36  h-10 w-10"
                 width="100px"
                 src={item.product_image}
                 alt="product_img"

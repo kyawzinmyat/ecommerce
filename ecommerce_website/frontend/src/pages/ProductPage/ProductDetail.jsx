@@ -7,6 +7,7 @@ import "./productdetails.css";
 import ProductInformation from "./ProductInformation";
 import "../../components/categories/categories.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function ProductDetail({}) {
   const { state } = useLocation();
@@ -27,6 +28,7 @@ export default function ProductDetail({}) {
 
   return (
     <>
+    <Navbar></Navbar>
       <div className="prev-arrow btn" onClick={goBack}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,39 +46,7 @@ export default function ProductDetail({}) {
       <div className="add-to-cart-success" id="add-to-cart-success">
         <p>Item added to the Cart!!</p>
       </div>
-      {/* <div className="product-detail-container container-fluid">
-        <div className="row product-detail-sub-container">
-          <div className="col-lg-5 col-md-12 col-sm-12 product-detail-image-container">
-            <ProductDetailMainImage image={product.image} />
-            <div className="product-variants-img-container">
-              <ProductDetailProductVariantImage
-                image={product.image}
-                cssClass={"product-variants-img"}
-              />
-              <ProductDetailProductVariantImage
-                image={product.image}
-                cssClass={"product-variants-img"}
-              />
-              <ProductDetailProductVariantImage
-                image={product.image}
-                cssClass={"product-variants-img"}
-              />
-              <ProductDetailProductVariantImage
-                image={product.image}
-                cssClass={"product-variants-img"}
-              />
-            </div>
-          </div>
-          <div className="col-lg-7 col-md-12 col-sm-12">
-            <ProductInformation
-              product_obj={product}
-              productCategory={productCategory}
-            />
-          </div>
-        </div>
-      </div> */}
-
-      <div className="product-detail-body">
+      <div className="">
         <ProductInformation product={product} />
       </div>
     </>

@@ -162,7 +162,7 @@ export default function SignUp() {
       <ActivationAccountPopup />
       {( loading &&
                 <BounceLoader
-                  color="#3b444b"
+                  color="var(--primary-color)"
                   cssOverride={{ position: "absolute", top:'50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '1000000'}}
                   loading
                   size={100}

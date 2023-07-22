@@ -25,7 +25,6 @@
 
 .user-profile-header {
     width: calc(90%);
-    font-weight: 800;
     margin: 1em auto;
     font-size: 25px;
     background-color: var(--secondary-color);

@@ -1,12 +1,50 @@
 :root{
-    --primary-color: #3b444b;
+    --primary-color: rgb(55 65 81);
+    /* --primary-color: #3b444b; */
     --secondary-color:#fff;
+    --dark-color: rgb(64 64 64);
     --large-fs: 3em;
     --medium-fs: 2em;
     --small-fs: 1em
 }
 
-h1, h2, h3, h4, h5, p{
+.bg--primary{
+    background-color: var(--primary-color);
+}
+
+.bg--secondary{
+    background-color: var(--secondary-color);
+}
+
+.bg--dark{
+    background-color: var(--dark-color);
+}
+
+.text--primary{
+    color: var(--primary-color)
+}
+
+.text--secondary{
+    color: var(--secondary-color)
+}
+
+.text--dark{
+    color: var(--dark-color)
+}
+
+.border--primary{
+    border-color: var(--primary-color);
+}
+
+.border--secondary{
+    border-color: var(--secondary-color);
+}
+
+.border--dark{
+    border-color: var(--dark-color);
+}
+
+/* h1, h2, h3, h4, h5, p{
     max-width: 60ch;
     line-height: 1.6;
-}
+} */

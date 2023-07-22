@@ -5,19 +5,19 @@ var image_url = "http://127.0.0.1:8000/media/images/tamanna-rumee-mIqyYpSNq3o-un
 
 export default function Intro() {
   return (
-    <div className="row intro-container">
-      <div className="col-lg-6 col-md-12 col-sm-12">
+    <div className="flex flex-col intro-container lg:flex-row">
+      <div className="mx-auto basis-1/4 md:basis-full">
         <img className='intro-img' src = {image_url}></img>
       </div>
-      <div className="bg-light text-secondary col-lg-6 col-sm-12 col-md-12  text-center intro">
+      <div className="bg-light basis-3/4 md:basis-full text-secondary mx-auto  intro">
         <div className="py-4">
-          <h1 className="display-5 fw-bold text-dark">The All-in-One Ecommerce</h1>
-          <div className="col-lg-10 mx-auto">
+          <h1 className="text-5xl mx-auto font-bold text-dark">The All-in-One Ecommerce</h1>
+          <div className="mx-auto">
             <p className="intro-text lead">
               Quickly design and customize responsive mobile-first sites with
               Bootstrap, the world’s most popular front-end open source toolkit,
             </p>
-            <div className="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <div className="mx-auto">
               <button
                 type="button"
                 className="btn btn-outline-dark btn-sm me-sm-3 fw-bol"

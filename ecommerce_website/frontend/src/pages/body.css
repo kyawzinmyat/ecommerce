@@ -13,7 +13,7 @@
 
     .main-body-container {
         display: flex;
-        background-color: #3b444b;
+        background-color: var(--primary-color);
     }
 
     .product-container-body {

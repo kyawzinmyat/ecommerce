@@ -1,8 +1,8 @@
 .contact-info-container{
     margin: 10em auto;
-    width: min(100%, 1500px);
+    width: min(100%, 1800px);
     padding-top: 5em;
-    background-color: #3b444b;
+    background-color: var(--primary-color);
 }
 
 .contact-info-container svg{
