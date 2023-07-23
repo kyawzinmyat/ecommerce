@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./UserProfile.css";
 import Button from "../../components/buttons/Button";
+import DefaultProfilePicture from '../../images/profile_picture.png'
+import UserContext from "../../context/UserContext";
 
 export default function UserProfile() {
+
+  let {test} = useContext(UserContext);
+
   return (
-    <div className="user-profile-container text-dark ">
-      <div className="user-profile-body">
-        <div className="user-profile-header text-dark">
-          Hello Kyaw,
-          <p>This is your profile page</p>
-          <Button>Edit Setting</Button>
-          <hr className="bg-light border-3"></hr>
+    <div className="text-dark">
+      <div className="grid md:grid-cols-3 p-10">
+        <div className="md:col-span-3 border rounded-md row-start-1">
+          <div className="grid grid-cols-7">
+            <p className="md:col-span-6 col-span-7 text-xl p-3">Hello <strong className="text-2xl">Kyaw!</strong> This is your profile page</p>
+            <div className="md:w-30  col-span-7 md:col-span-1 w-full">
+              <Button primary rounded>Edit Setting</Button>
+            </div>
+          </div>
         </div>
-        <div className="user-profile-body-container">
-          <div className="user-profile-body-subcontainer">
-            <div className="user-profile-header-container">
-              <h4>My Account</h4>
-              <p className="px-4 py-2 bg-dark text-white rounded-4">Setting</p>
+        <div className="md:col-span-2 p-10 border rounded-md">
+          <div className="">
+            <div className="flex">
+              <h4 className="">My Account</h4>
+              <p className="px-4 py-2 text-center bg-dark text-ellipsis text-light">Setting</p>
+              {/* <div className="">
+                <p className="px-4 py-2 text-center bg-dark text-ellipsis text-light">Setting</p>
+              </div> */}
             </div>
 
             <div>
@@ -64,8 +74,9 @@ export default function UserProfile() {
             </div>
           </div>
         </div>
-        <div className="user-profile-side-body-container">
-          <div className="user-profile-side-body-subcontainer">
+        <div className="p-5 border rounded-md row-start-2 md:row-start-2">
+          <div className="text-center">
+            <img src={DefaultProfilePicture} className="w-full border my-3"></img>
             <h1>Jessica Jone, 27</h1>
             <p>Yangon, Myanmar</p>
             <p>

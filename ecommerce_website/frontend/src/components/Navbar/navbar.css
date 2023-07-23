@@ -178,7 +178,6 @@
 .submenu-link p {
     width: 80%;
     color:#000;
-    border: 1px solid black;
 }
 
 
@@ -240,7 +239,7 @@
 } */
 
 
-@media (min-width:10000px){
+@media (min-width:900px){
     .scroll-up{
         transform: translate3d(0, 0%, 0);
     }

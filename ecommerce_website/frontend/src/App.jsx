@@ -16,6 +16,7 @@ import { BasketProvider } from "./context/BasketContext";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import UserProfile from "./pages/UserAccount/UserProfile";
+import { UserProvider } from "./context/UserContext";
 
 function App() {
   return (
@@ -35,9 +36,11 @@ function App() {
               <Route path="/cart-summary" exact element={<CartDetail />} />
             </Routes>
           </BasketProvider>
-          <Routes>
-            <Route path='/user-account' exace element={<UserProfile/>}></Route>
-          </Routes>
+          <UserProvider>
+            <Routes>
+              <Route path='/user-account' exace element={<UserProfile />}></Route>
+            </Routes>
+          </UserProvider>
         </AuthProvider>
       </Router>
     </div>

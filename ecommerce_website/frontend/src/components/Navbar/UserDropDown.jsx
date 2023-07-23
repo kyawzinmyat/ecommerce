@@ -27,12 +27,17 @@ export default function UserDropDown( ) {
         )
     }
 
+    let onClickAccount = () => {
+      navigate('user-account')
+    }
+  
   return (
     <div>
       <div className="drop-down-menu" id = 'drop-down-menu'>
         {
-          user && <a className="submenu-link">
-          <p>
+          user && 
+          <a className="submenu-link" onClick={onClickAccount}>
+            <p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="26"
