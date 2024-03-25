@@ -48,38 +48,6 @@ export const AuthProvider = ({ children }) => {
     var data = await response.json();
   };
 
-  // let signup = async (e) => {
-  //   e.preventDefault();
-  //   var username = e.target.username.value;
-  //   var firstname = e.target.first_name.value;
-  //   var lastname = e.target.last_name.value;
-  //   var email = e.target.email.value;
-  //   var password = e.target.password.value;
-  //   var password2 = e.target.password2.value;
-  //   var phoneNumber = e.target.phone_number.value;
-
-  // };
-
-  // let callSignupApi = async () => {
-  //   let response = await fetch(
-  //     `${API_HOST}signup/`,
-  //     {
-  //       method: 'POST',
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         username: username,
-  //         email: email,
-  //         phone_number: phoneNumber,
-  //         first_name: firstname,
-  //         last_name: lastname,
-  //         password: password,
-  //         gender: selected
-  //       })
-  //     }
-  //   )
-  // }
 
   let login = async (e) => {
     e.preventDefault();

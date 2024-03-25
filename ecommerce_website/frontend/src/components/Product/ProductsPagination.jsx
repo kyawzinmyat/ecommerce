@@ -4,8 +4,9 @@ import Pagination from "./Pagination";
 import ProductCard from "./ProductCard";
 import "./product.css";
 import ProductCategories from "../categories/ProductCategories";
+import AddProduct from "../../pages/ProductPage/AddProduct";
 
-const pagesPer = 4;
+const pagesPer = 6;
 
 export default function ProductsPagination({ data, setProductCategory, productCat }) {
   var [currentPage, setCurrentPage] = useState(1);
@@ -28,6 +29,7 @@ export default function ProductsPagination({ data, setProductCategory, productCa
               />
             );
           })}
+          <AddProduct></AddProduct>
         </div>
       </div>
       <div className="pagination">

@@ -21,11 +21,11 @@ export default function Login() {
         navigate('/');
       }
     
-    }, [])
+    }, [user])
 
   return (
     <div>
-      <div className="body-login">
+      <div className="body-login bg-slate-50">
         <div className="container-login">
             <div className="title-login text-center">
                 Login
@@ -43,9 +43,9 @@ export default function Login() {
                 <span>Password</span>
                 <input type="password" name='password'></input>
               </div>
-              <div className="login-button">
-                <input type='submit' value='Login'></input>
-                <button className="login-sign-up" onClick={onClickSignup}>Do not have an Account? Signup</button>
+              <div className="login-button ">
+                <input type='submit' className="bg-blue-700	" value='Login'></input>
+                <button  className="login-sign-up bg-blue-700	" onClick={onClickSignup}>Do not have an Account? Signup</button>
               </div>
             </div>
           </form>

@@ -13,7 +13,6 @@
 .sign-up-body {
     display: flex;
     height: 100vh;
-    background-color: var(--primary-color);
     justify-content: center;
     align-items: center;
 }
@@ -24,7 +23,6 @@
     padding: 20px 35px;
     background-color: #fff;
     border-radius: 10px;
-    border: 1px solid #ccc;
 }
 
 .container-signup .sign-up-title {

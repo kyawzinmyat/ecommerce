@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name = 'index.html')),
     path('api/basket/', include('basket.urls', namespace='basket')),
-    path('api/products/', include('products.urls', namespace='products'))
+    path('api/products/', include('products.urls', namespace='products')),
+    path('api/user/info/', include('users.urls', namespace='user_info'))
 ]
 
 if settings.DEBUG:

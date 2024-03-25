@@ -6,6 +6,7 @@ import AuthContext from "../../context/AuthContext";
 import BasketContext from "../../context/BasketContext";
 import Basket from "../basket/Basket";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 
 const Navbar = () => {
   var API_HOST = "http://127.0.0.1:8000/account_authentication";
@@ -13,6 +14,7 @@ const Navbar = () => {
   const {setToken} = useContext(BasketContext);
 
   let { user, logout } = useContext(AuthContext);
+  let { userInfo } = useContext(UserContext)
 
   useEffect(
       () => {
@@ -74,7 +76,7 @@ const Navbar = () => {
         </div>
 
         <nav className="primary-navigation">
-          <ul className="navigation" id ='navigation' data-visible='false'>
+          <ul className="navigation cursor-pointer" id ='navigation' data-visible='false'>
             <li>
               <a>Home</a>
             </li>
@@ -83,6 +85,9 @@ const Navbar = () => {
             </li>
             <li>
               <a>About Us</a>
+            </li>
+            <li>
+              <a onClick={() => navigate('/admin-home')}>{userInfo.is_vendor && 'Admin'}</a>
             </li>
             <li className="hide"><a>Account</a></li>
             <li className="hide login-or-signup"><a onClick={onClickLoginOrSignup}>{user ? 'Logout' : 'Login'}</a></li>

@@ -50,4 +50,3 @@ class UserLogoutSerializer(serializers.ModelSerializer):
             'message' : 'Logout Successfully'
         }, status = 200)
 
-

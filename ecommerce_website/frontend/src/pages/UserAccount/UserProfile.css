@@ -64,8 +64,8 @@
 }
 
 .input-box {
-    margin: 20px 0 12px 0;
-    padding: 20px 0 12px 0;
+    margin: 10px 0 12px 0;
+    padding: 5px 0 12px 0;
     width: calc(100% / 2 - 10px);
 }
 
@@ -75,11 +75,20 @@
     outline: none;
     border-radius: 10px;
     border: 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(209, 204, 204, 0.1) 0px 10px 15px -3px, rgba(126, 122, 122, 0.05) 0px 4px 6px -2px;
+    padding-left: 1em;
 }
 
 .user-profile-header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 600px){
+    .input-box {
+        margin: 20px 0 12px 0;
+        padding: 20px 0 12px 0;
+        width: 100%
+    }
 }

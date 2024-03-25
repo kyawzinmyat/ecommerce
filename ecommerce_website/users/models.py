@@ -33,9 +33,18 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=False)
     data_joined = models.DateTimeField((""), default=timezone.now)
     objects = CustomUserManager()
+    is_vendor = models.BooleanField(default=False)
+    is_customer = models.BooleanField(default=True)
 
     USERNAME_FIELD  = 'email'
     REQUIRED_FIELDS = ['username',  'first_name', 'last_name']
 
     def __str__(self):
         return self.username
+    
+class Vendor(models.Model):
+
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username

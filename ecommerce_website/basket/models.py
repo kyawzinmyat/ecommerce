@@ -2,13 +2,15 @@ from django.db import models
 from users.models import CustomUser
 from products.models import Product
 from django.db.models.signals import post_save
+from users.models import Vendor
 
 
 def _create_basket(sender, instance, created, **kwargs):
     if created:
         print("##########################----created----############")
         Basket.objects.create(owner=instance, basket_qty=0)
-
+        if instance.is_vendor:
+            Vendor.objects.create(user=instance)
 
 post_save.connect(_create_basket, sender=CustomUser)
 

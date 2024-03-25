@@ -28,8 +28,16 @@ class ProductsAllAPI(generics.GenericAPIView):
     queryset = Product.objects.all()
 
     def post(self, request, *args, **kwargs):
-        product_category_id = int(self.request.data['productCategory']['id'])
-        queryset = Product.objects.all().filter(category=product_category_id)
+        queryset = Product.objects.all()
+        data = self.request.data
+        if data.get('productCategory'):
+            product_category_id = int(data.get('productCategory').get('id') or 0)
+            queryset = queryset.filter(category=product_category_id)
+        if data.get('vendor'):
+            product_vendor_id = int(data.get('vendor').get('id'))
+            queryset = queryset.filter(vendor=product_vendor_id)
+        if data.get('pagination'):
+            queryset = queryset[data['pagination']['offset']: data['pagination']['offset'] + data['pagination']['size']]
         serializer = self.get_serializer(queryset, many = True)
         return JsonResponse(serializer.data, status=200, safe = False)
 

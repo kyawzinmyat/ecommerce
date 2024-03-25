@@ -17,6 +17,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import UserProfile from "./pages/UserAccount/UserProfile";
 import { UserProvider } from "./context/UserContext";
+import OwnerHome from "./pages/Owner/OwnerHome";
+import OwnerProduct from "./pages/Owner/OwnerProduct";
 
 function App() {
   return (
@@ -24,23 +26,26 @@ function App() {
       <Router>
         <AuthProvider>
           <BasketProvider>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/login" exact element={<Login />} />
-              <Route path="/signup" exact element={<SignUp />} />
-              <Route
-                path="/product-details"
-                exact
-                element={<ProductDetail />}
-              />
-              <Route path="/cart-summary" exact element={<CartDetail />} />
-            </Routes>
+            <UserProvider>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                
+                <Route
+                  path="/product-details"
+                  exact
+                  element={<ProductDetail />}
+                />
+                <Route path="/cart-summary" exact element={<CartDetail />} />
+                <Route path='/user-account' exact element={<UserProfile />}></Route>
+              <Route path='/admin-home' exact element={<OwnerHome />}></Route>
+              <Route path='/admin-products' exact element={<OwnerProduct />}></Route>
+              </Routes>
+            </UserProvider>
           </BasketProvider>
-          <UserProvider>
             <Routes>
-              <Route path='/user-account' exace element={<UserProfile />}></Route>
+               <Route path="/login" exact element={<Login />} />
+                <Route path="/signup" exact element={<SignUp />} />
             </Routes>
-          </UserProvider>
         </AuthProvider>
       </Router>
     </div>

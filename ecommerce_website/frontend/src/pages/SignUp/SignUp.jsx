@@ -168,7 +168,7 @@ export default function SignUp() {
                   size={100}
                 />
               )}
-      <div className="sign-up-body" id='sign-up-body'>
+      <div className="sign-up-body bg-slate-100" id='sign-up-body'>
         <div className="container-signup ">
           <div className="sign-up-title">Registration</div>
           <form onSubmit={onSubmitForm} id="signup-form">

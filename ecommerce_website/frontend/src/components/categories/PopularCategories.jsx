@@ -21,6 +21,7 @@ export default function PopularCategories() {
             }
         )
         let data = await respone.json();
+        console.log(data.slice(0,5))
         setPopularCategories(data.slice(0,5));
     }
     if (!loadedPopularCategories) {

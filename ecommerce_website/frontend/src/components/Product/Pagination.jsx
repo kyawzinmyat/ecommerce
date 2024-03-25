@@ -6,7 +6,10 @@ export default function Pagination({totalPosts, postsPerPage, setCurrentPage, cu
         pages.push(i);
     }   
     return (
-    <div>
+    <div className='overflow-scroll' style={{
+        transform: 'translateX(3em)',
+        transition: 'transform 2s'
+    }}>
         {
             pages.map((page, index) => {
                 return <button key = {index} className = {currentNum === page ? 'pagination-num-active' : 'pagination-num-unactive'} onClick = {() => setCurrentPage(page)}>{page}</button>
