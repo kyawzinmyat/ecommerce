@@ -28,6 +28,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField('Gender', blank=True, null=True, max_length=20)
     username = models.CharField(("Username"), max_length=50, unique=True)
     first_name = models.CharField(("Firstname"), max_length=50)
+    image = models.ImageField(upload_to='images/', default='images/default.png')
     last_name = models.CharField(("Lastname"), max_length=50)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
@@ -45,6 +46,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 class Vendor(models.Model):
 
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    vendor_name = models.CharField('Vendor Name', null=True, max_length=50)
 
     def __str__(self):
         return self.user.username

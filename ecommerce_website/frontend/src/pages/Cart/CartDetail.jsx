@@ -17,27 +17,27 @@ export default function CartDetail() {
     <>
     <Navbar></Navbar>
       <div
-        className="text-center cart-detail-title my-5"
+        className="text-center cart-detail-title"
         style={{ fontFamily: "cursive" }}
       >
-        <div>
+        {/* <div>
           Your Cart
-        </div>
+        </div> */}
       </div>
       <div className="w-full cart-detail-container">
         <div className="row container-fluid">
           <div className="col-lg-7 col-md-12 mx-auto">
             <div className="container-fluid cart-detail-table">
-              <table className="table-auto w-full  border border-slate-500 border-seperate  border-spacing-1 mx-auto">
-                <thead>
-                  <tr className=" text-xs md:text-md lg:text-xl">
+              <table className="table-auto table w-full  border-slate-500 border-seperate  border-spacing-1 mx-auto">
+                <thead className="border-0">
+                  <tr className=" text-xs md:text-md lg:text-xl border-0">
                     <th className="text-left px-3 cart-font cart-font">Item</th>
                     <th className="text-center p-1 cart-font">Price</th>
                     <th className="text-center cart-font">Quantity</th>
                     <th className="text-center cart-font">Total</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="border-0">
                   <CartItemList />
                 </tbody>
               </table>

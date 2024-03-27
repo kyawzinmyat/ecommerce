@@ -33,12 +33,12 @@ export default function PopularCategories() {
 
   return (
     <div>
-        <div className='popular-categories-container'>
+        <div className=''>
         {popularCategories && popularCategories.map((category, index) => {
         return (
           <span
             key={category.id}
-            className='category-pill  badge badge-pill badge-primary'>
+            className='category-pill badge badge-pill badge-primary font-light tracking-tighter leading-20 font-serif'>
             {category.name}
           </span>
         );

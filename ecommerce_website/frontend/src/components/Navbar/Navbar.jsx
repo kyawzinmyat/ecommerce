@@ -66,10 +66,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="nav-body my-3" id='nav-body'>
+    <div className="nav-body my-0" id='nav-body'>
       <header className="flex nav-container">
-        <div className="logo-img">
-          <img src={LogoImage} alt="logo image"></img>
+        <div className="text-lg">
+          One
         </div>
 
         <div className='mobile-nav-toggle' id='mobile-nav-toggle' onClick={onClickHamburger}>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         <nav className="primary-navigation">
           <ul className="navigation cursor-pointer" id ='navigation' data-visible='false'>
-            <li>
+            {/* <li>
               <a>Home</a>
             </li>
             <li>
@@ -88,7 +88,7 @@ const Navbar = () => {
             </li>
             <li>
               <a onClick={() => navigate('/admin-home')}>{userInfo.is_vendor && 'Admin'}</a>
-            </li>
+            </li> */}
             <li className="hide"><a>Account</a></li>
             <li className="hide login-or-signup"><a onClick={onClickLoginOrSignup}>{user ? 'Logout' : 'Login'}</a></li>
             <li className="nav-item list-unstyled basket btn hide">

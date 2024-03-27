@@ -25,13 +25,13 @@ export default function CartItem({ item }) {
 
   return (
     <>
-      <tr className="text-xs md:text-lg">
-        <td className="text-center ">
+      <tr className="text-xs md:text-lg bg-slate-100 border border-white border-spacing-1">
+        <td className="text-center border-0">
           <div className="item-table-info">
             <div className="item-info">
               <img
-                className="lg:h-36 lg:w-36  h-10 w-10"
-                width="100px"
+                className="lg:h-30 lg:w-30  h-10 w-10"
+                width="80px"
                 src={item.product_image}
                 alt="product_img"
               ></img>
@@ -39,8 +39,8 @@ export default function CartItem({ item }) {
             <div className="">{item.product_name}</div>
           </div>
         </td>
-        <td className="text-center">{item.product_price}</td>
-        <td className="text-center">
+        <td className="text-center border-0">{item.product_price}</td>
+        <td className="text-center border-0">
           <span className="mx-2" id='unhide-area'>{item.quantity}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function CartItem({ item }) {
             {edit && <ItemEdit item={item} onClick={onClickButton}/>}
           </div>
         </td>
-        <td className="text-center" width="100px">
+        <td className="text-center border-0" width="100px">
           {item.total_price}
         </td>
       </tr>

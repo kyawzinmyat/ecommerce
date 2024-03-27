@@ -7,7 +7,7 @@ export default function Category({category}) {
         name={category.name}
         key={index}
         onClick={() => onClickCategory(category)}
-        className={
+        className={ 'bg-slate-50 ' + 
           category === currentCat
             ? "category-active category"
             : "category-unactive category"

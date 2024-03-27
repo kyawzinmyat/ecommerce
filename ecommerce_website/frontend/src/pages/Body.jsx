@@ -8,32 +8,18 @@ import JoinForFree from "../components/body/JoinForFree";
 import PopularCategoriesContainer from "../components/body/PopularCategoriesContainer";
 import GrowBusiness from "../components/body/GrowBusiness";
 import ContactInfo from "../components/body/ContactInfo";
+import HomePage from "../components/body/HomePage";
+import VednorContainer from "../components/body/VednorContainer";
+import Intro2 from "../components/body/Intro2";
 
 export default function Body() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-      if (entry.isIntersecting) entry.target.classList.add("show");
-      else entry.target.classList.remove("show");
-    });
-  });
-  const hiddenElements = document.querySelectorAll(".hidden_");
-  
-  let openMainCategories = (e) => {
-    e.preventDefault();
-    var mainCategories = document.getElementById("main-categories-container");
-    console.log(mainCategories);
-    mainCategories.classList.toggle("open");
-  };
 
   return (
     <div className="container-fluid hidden_">
-      {hiddenElements.forEach((entry) => {
-        observer.observe(entry);
-        console.log(entry)
-      })}
+
       <div>
-        <Intro />
+        {/* <Intro /> */}
+        <HomePage></HomePage>
       </div>
 
       <div className="row main-body-container">
@@ -41,15 +27,18 @@ export default function Body() {
           <MainBody />
         </div>
         <div className="hidden_">
-          <ProductContainer />
-          <ProductContainer />
+          {/* <ProductContainer />
+          <ProductContainer /> */}
+          <VednorContainer />
         </div>
       </div>
-      <div className="hidden_">
-        <JoinForFree />
-      </div>
-      <div className="hidden_ my-5">
+
+      <div className="hidden_ mt-[15em]">
         <GrowBusiness />
+
+      </div>
+      <div className="mt-[15em]">
+        <Intro2 />
       </div>
       <div className="hidden_">
         <PopularCategoriesContainer />
@@ -57,6 +46,9 @@ export default function Body() {
       {/* <div className="hidden_">
         <ContactInfo />
       </div> */}
+      <div className="hidden_">
+        <JoinForFree />
+      </div>
       <Footer />
     </div>
   );

@@ -13,7 +13,7 @@ export default function CartSummary() {
   const { subtotal, tax } = useContext(BasketContext);
 
   return (
-    <div className="col-lg-4 col-md-12 mx-auto container-fluid border  order-summary-container">
+    <div className="col-lg-4 col-md-12 bg-slate-50 mx-auto container-fluid border  order-summary-container">
       <h2 className="text-center p-2">Order Summary</h2>
       <hr></hr>
       <div className="row order-summary-detail-container">

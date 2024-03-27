@@ -3,8 +3,6 @@ import AuthContext from "./AuthContext";
 import {API_HOST} from '../API.js'
 import { data } from "autoprefixer";
 import { useNavigate } from "react-router-dom";
-import {API_HOST} from '../API.js'
-
 
 const UserContext = createContext();
 export default UserContext;
@@ -20,6 +18,7 @@ export const UserProvider = (props) => {
   const {user} = useContext(AuthContext);
   const navigate = useNavigate()
   const [userInfo, setUserInfo] = useState()
+
   useEffect(
     () => {
       const fetchUserData = async () => {
@@ -39,9 +38,23 @@ export const UserProvider = (props) => {
       fetchUserData()
       console.log(userInfo)
     }, [user, userInfo])
+
+
+    const fetchProduct = async () => {
+      let response = await fetch(API_HOST + "products/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ productCategory: { id: productCategory.id } }),
+      });
+      var data = await response.json();
+      return data;
+    };
   
   let contextData = {
-    userInfo: userInfo
+    userInfo: userInfo,
+    fetchProduct: fetchProduct
   };
 
   return (

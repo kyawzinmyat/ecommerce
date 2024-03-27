@@ -10,6 +10,7 @@ export default function UserDropDown( ) {
     let {user} = useContext(AuthContext);
     let {logout} = useContext(AuthContext);
     const navigate = useNavigate();
+    
 
     let login = () => {
       navigate("/login");
@@ -128,6 +129,10 @@ export default function UserDropDown( ) {
             </svg>
           </span>
         </a>
+
+        {/* <li>
+              <a onClick={() => navigate('/admin-home')}>{userInfo.is_vendor && 'Admin'}</a>
+            </li> */}
       </div>
     </div>
   );

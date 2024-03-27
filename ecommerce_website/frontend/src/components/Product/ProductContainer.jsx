@@ -1,30 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import "./product.css";
 import Pagination from "./Pagination";
 import ProductsPagination from "./ProductsPagination";
+import UserContext from "../../context/UserContext";
+import ProductContext from "../../context/ProductContext";
 
-const API_HOST = "http://127.0.0.1:8000/api/";
 export default function ProductContainer() {
   let [product, setProducts] = useState([]);
   let [loading, setLoading] = useState(true);
   let [productCategory, setProductCategory] = useState("");
+  let {userInfo} = useContext(UserContext)
+  const {fetchProduct} = useContext(ProductContext)
 
-  const fetchProduct = async () => {
-    let response = await fetch(API_HOST + "products/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ productCategory: { id: productCategory.id } }),
-    });
-    var data = await response.json();
+  const fetchProductApi = async () => {
+    const data = fetchProduct()
     setProducts(data);
   };
 
   useEffect(() => {
     if (productCategory) {
-      fetchProduct();
+      fetchProductApi();
       setLoading(false);
     }
   }, [productCategory]);

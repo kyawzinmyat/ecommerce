@@ -31,16 +31,28 @@ export const UserProvider = (props) => {
           body: JSON.stringify({ id:  user.user_id}),
         });
         var data = await response.json();
-        console.log(userInfo, data[0], 1)
         setUserInfo(data[0])
       }
       if (token === null) return navigate('/login');
-      fetchUserData()
+      if (userInfo == null) fetchUserData()
       console.log(userInfo)
     }, [user, userInfo])
+
+    const getVendor = async () => {
+      let response = await fetch(API_HOST + 'user/info/vendor-all', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + String(token.access),
+        },
+      });
+      var data = await response.json();
+      return data;
+    }
   
   let contextData = {
-    userInfo: userInfo
+    userInfo: userInfo,
+    getVendor: getVendor
   };
 
   return (
