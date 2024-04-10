@@ -16,10 +16,8 @@ class UserInfoAPI(generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         data = request.data 
-        print(data)
         user_id = int(data['id'])
         queryset = CustomUser.objects.all().filter(id=user_id)
-        print(queryset, 1)
         serializer = self.get_serializer(queryset, many = True)
         return JsonResponse(serializer.data, status=201, safe = False)
     

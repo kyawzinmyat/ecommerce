@@ -7,7 +7,7 @@ const HomePage = () => {
   document.title = 'Home';
   return (
     <div>
-       <Navbar/>
+       {/* <Navbar/> */}
       <Body/> 
     </div>
   );

@@ -7,6 +7,7 @@ import AuthContext from '../../context/AuthContext.jsx';
 import { useNavigate } from "react-router-dom";
 import UtilHeader from './UtilHeader.jsx';
 import ProductContainer from './ProductContainer.jsx';
+import ProductContext from '../../context/ProductContext.jsx';
 
 export default function OwnerProduct() {
 
@@ -19,25 +20,15 @@ export default function OwnerProduct() {
     let [currentCategory, setCurrentCategory] = useState()
     let [paginationSize, setPaginationSize] = useState(40)
     let [currentPage, setCurrentPage] = useState(0)
-
+    let {fetchPopularCategories} = useContext(ProductContext)
     let { token } = useContext(AuthContext);
 
     const onClickCategory = (category) => {
         setCurrentCategory(category)
     }
 
-    let fetchPopularCategories = async () => {
-        let respone = await fetch(
-            API_HOST + 'products/main-categories',
-            {
-                method: 'GET',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer " + String(token.access),
-                },
-            }
-        )
-        let data = await respone.json();
+    let fetchPopularCategoriesApi = async () => {
+        let data = await fetchPopularCategories()
         setPopularCategories(data.slice(0, 5));
         setCurrentCategory(data[0])
     }
@@ -69,7 +60,7 @@ export default function OwnerProduct() {
         () => {
             currentCategory && fetchProduct()
             if (!loadedPopularCategories) {
-                fetchPopularCategories();
+                fetchPopularCategoriesApi();
                 setLoadedPopularCategories(true);
             }
         }

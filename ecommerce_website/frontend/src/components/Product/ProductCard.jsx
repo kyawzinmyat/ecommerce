@@ -18,18 +18,18 @@ export default function ProductCard({
   }
 
   return (
-    <div className="col-lg-2 col-md-6 col-sm-6 col-12 col-xs-12  my-md-1" onClick = {onClickProduct}>
+    <div className="col-lg-2 col-md-6 col-4 z-[0] my-md-1" onClick = {onClickProduct}>
       <div className="card product-card">
         <img
-          className="card-img-top product-image img-fluid"
+          className="card-img-top product-image img-fluid z-[1]"
           src={product.image}
           alt="Card image cap"
         ></img>
 
         <div className="card-body font-lg">
           <div className="row">
-            <p className="col-lg-12 text-lg tracking-tighter line-clamp-5 font-semibold">{product.title}</p>
-            <p className="card-text description text-lg font-semibold">$ {product.price} </p>
+            <p className="col-lg-12 text-sm lg:text-lg tracking-tighter font-sans font-semibold">{product.title}</p>
+            <p className="card-text description text-sm  font-sans font-light">$ {product.price} </p>
           </div>
         </div>
       </div>

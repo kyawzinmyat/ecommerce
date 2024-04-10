@@ -2,6 +2,12 @@
     overflow: hidden;
 }
 
+.paused {
+    animation-play-state: paused !important;
+    -webkit-animation-play-state: paused !important;
+    -moz-animation-play-state: paused !important;
+  }
+
 .slider-track{
     width: calc(250px * 16);
     display: flex;

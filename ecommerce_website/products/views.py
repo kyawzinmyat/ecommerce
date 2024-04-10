@@ -3,7 +3,7 @@ from .serializers import ProductSerializers, CategorySerializers, MainCategorySe
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
-from .models import Product, Category, MainCategory
+from .models import Product, Category, MainCategory, Vendor
 
 
 class ProductMainCategoriesAPI(generics.GenericAPIView):
@@ -23,6 +23,7 @@ class ProductCategoriesAPI(generics.GenericAPIView):
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many = True)
         return JsonResponse(serializer.data, status=201, safe = False)
+    
 class ProductsAllAPI(generics.GenericAPIView):
     serializer_class = ProductSerializers
     queryset = Product.objects.all()
@@ -35,7 +36,7 @@ class ProductsAllAPI(generics.GenericAPIView):
             queryset = queryset.filter(category=product_category_id)
         if data.get('vendor'):
             product_vendor_id = int(data.get('vendor').get('id'))
-            queryset = queryset.filter(vendor=product_vendor_id)
+            queryset = queryset.filter(vendor=Vendor.objects.get(user=product_vendor_id))
         if data.get('pagination'):
             queryset = queryset[data['pagination']['offset']: data['pagination']['offset'] + data['pagination']['size']]
         serializer = self.get_serializer(queryset, many = True)

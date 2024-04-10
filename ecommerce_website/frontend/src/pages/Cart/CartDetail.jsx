@@ -14,8 +14,7 @@ export default function CartDetail() {
   let { user } = useContext(AuthContext);
   document.title='Your Cart'
   return (
-    <>
-    <Navbar></Navbar>
+    <div className="bg-slate-50 min-h-screen">
       <div
         className="text-center cart-detail-title"
         style={{ fontFamily: "cursive" }}
@@ -46,6 +45,6 @@ export default function CartDetail() {
           <CartSummary />
         </div>
       </div>
-    </>
+    </div>
   );
 }

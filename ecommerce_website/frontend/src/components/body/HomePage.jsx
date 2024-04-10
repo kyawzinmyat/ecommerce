@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import TextField from '@mui/material/TextField';
 import './homepage.css'
 import images from './HomePageImages'
+import { motion, useInView } from "framer-motion"
 
 export default function HomePage() {
+
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+
     return (
         <div className='h-[80vh] relative'>
             <div className='z-[99999] rounded-md  bg-white w-[80%] lg:w-[50%] absolute top-[10%] left-[10%] bottom-[10%] right-[10%] gap-2 flex flex-col justify-center items-center'>
@@ -13,11 +18,11 @@ export default function HomePage() {
                 </div>
                 <span className='font-serif text-xs tracking-tighter opacity-60'>Shop our curated selection to make your life easier.</span>
             </div>
-            <div className='slider'>
+            <div className='slider' ref={ref} >
                 <div className='slider-track'>
                     {images.map((item, index) => {
                         return <div key={index} className='slide bg-slate-100'>
-                            <img src={item} className='w-full h-auto object-cover'></img>
+                            {isInView && <img src={item} loading="lazy" className='w-full h-auto object-cover'></img>}
                         </div>
                     })}
                 </div>

@@ -19,6 +19,9 @@ import UserProfile from "./pages/UserAccount/UserProfile";
 import { UserProvider } from "./context/UserContext";
 import OwnerHome from "./pages/Owner/OwnerHome";
 import OwnerProduct from "./pages/Owner/OwnerProduct";
+import ProductMainPage from "./pages/ProductPage/ProductMainPage";
+import { ProductProvider } from "./context/ProductContext";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
@@ -27,9 +30,15 @@ function App() {
         <AuthProvider>
           <BasketProvider>
             <UserProvider>
+              <ProductProvider>
+                <Navbar></Navbar>
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                
+                <Route
+                  path="/products"
+                  exact
+                  element={<ProductMainPage />}
+                />
                 <Route
                   path="/product-details"
                   exact
@@ -40,6 +49,7 @@ function App() {
               <Route path='/admin-home' exact element={<OwnerHome />}></Route>
               <Route path='/admin-products' exact element={<OwnerProduct />}></Route>
               </Routes>
+              </ProductProvider>
             </UserProvider>
           </BasketProvider>
             <Routes>
